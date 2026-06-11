@@ -1,0 +1,24 @@
+.order-item {
+  padding: 20rpx 0;
+  border-top: 1rpx solid #e5e7eb;
+}
+
+.order-item:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.order-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.status {
+  color: #1677ff;
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 24rpx 0;
+}

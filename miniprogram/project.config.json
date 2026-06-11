@@ -1,0 +1,13 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "goodsSystem",
+  "description": "基于微信小程序的网上商城系统",
+  "appid": "touristappid",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "compileHotReLoad": true
+  },
+  "compileType": "miniprogram"
+}

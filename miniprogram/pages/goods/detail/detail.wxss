@@ -1,0 +1,27 @@
+.detail-cover {
+  width: 100%;
+  height: 420rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.price-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.detail-content {
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.action-row {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 30rpx;
+}
+
+.action-row button {
+  flex: 1;
+}

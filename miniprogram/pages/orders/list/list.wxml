@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="card">
+    <view wx:for="{{orderList}}" wx:key="id" class="order-item">
+      <view class="order-top">
+        <text>订单号：{{item.order_no}}</text>
+        <text class="status">{{item.status_text}}</text>
+      </view>
+      <view class="muted">商品：{{item.goods_info}}</view>
+      <view class="muted">总价：￥{{item.total_price}}</view>
+      <view class="muted">时间：{{item.create_time}}</view>
+    </view>
+    <view wx:if="{{orderList.length === 0}}" class="muted empty-tip">暂无订单</view>
+  </view>
+</view>

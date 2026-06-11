@@ -1,0 +1,37 @@
+<view class="page">
+  <view class="card">
+    <swiper class="banner" autoplay circular indicator-dots>
+      <swiper-item wx:for="{{banners}}" wx:key="index">
+        <image src="{{item}}" mode="aspectFill" class="banner-image"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="card">
+    <view class="search-row">
+      <input class="search-input" placeholder="搜索商品名称" value="{{keyword}}" bindinput="onInput" />
+      <button size="mini" class="btn-primary" bindtap="onSearch">搜索</button>
+    </view>
+    <view class="category-row">
+      <view class="category-item" wx:for="{{categories}}" wx:key="id">
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="title">精选商品</view>
+    <view wx:if="{{loading}}" class="muted">加载中...</view>
+    <view wx:elif="{{goodsList.length === 0}}" class="muted">暂无商品</view>
+    <view wx:for="{{goodsList}}" wx:key="id" class="goods-item" bindtap="toDetail" data-id="{{item.id}}">
+      <image src="{{item.cover}}" mode="aspectFill" class="goods-cover"></image>
+      <view class="goods-info">
+        <view class="goods-name">{{item.name}}</view>
+        <view class="goods-meta">
+          <text class="price">￥{{item.price}}</text>
+          <text class="muted">库存 {{item.stock}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

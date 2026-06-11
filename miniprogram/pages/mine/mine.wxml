@@ -1,0 +1,14 @@
+<view class="page">
+  <view class="card mine-card" wx:if="{{userInfo}}">
+    <image src="{{userInfo.avatar}}" class="mine-avatar"></image>
+    <view class="mine-name">{{userInfo.nickname}}</view>
+    <view class="muted">openid: {{userInfo.openid}}</view>
+    <navigator url="/pages/orders/list/list" class="menu-link">我的订单</navigator>
+  </view>
+
+  <view class="card mine-card" wx:else>
+    <view class="title">未登录</view>
+    <view class="muted">登录后可查看订单和个人信息</view>
+    <button class="btn-primary" bindtap="toLogin">去登录</button>
+  </view>
+</view>

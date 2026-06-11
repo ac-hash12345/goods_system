@@ -1,0 +1,7 @@
+<view class="page login-page">
+  <view class="card login-card">
+    <image class="avatar" src="{{avatarUrl || 'https://picsum.photos/seed/avatar/200/200'}}"></image>
+    <input class="name-input" placeholder="请输入昵称" value="{{nickname}}" bindinput="onNicknameInput" />
+    <button class="btn-primary" bindtap="chooseProfile">微信授权登录</button>
+  </view>
+</view>
