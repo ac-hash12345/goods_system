@@ -29,15 +29,20 @@ page {
 }
 
 .btn-primary {
-  background: #1677ff;
+  background: #ff6b00; /* 极客橙 */
   color: #ffffff;
-  border-radius: 999rpx;
+  border-radius: 16rpx; /* 改为微圆角，更有科技感 */
   margin-top: 16rpx;
+  box-shadow: 0 8rpx 20rpx rgba(255, 107, 0, 0.3);
 }
 
 .btn-ghost {
   background: #ffffff;
-  color: #1677ff;
-  border: 1rpx solid #1677ff;
-  border-radius: 999rpx;
+  color: #ff6b00;
+  border: 2rpx solid #ff6b00;
+  border-radius: 16rpx;
+}
+
+.status {
+  color: #ff6b00;
 }

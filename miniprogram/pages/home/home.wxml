@@ -19,19 +19,20 @@
     </view>
   </view>
 
-  <view class="card">
-    <view class="title">精选商品</view>
-    <view wx:if="{{loading}}" class="muted">加载中...</view>
-    <view wx:elif="{{goodsList.length === 0}}" class="muted">暂无商品</view>
-    <view wx:for="{{goodsList}}" wx:key="id" class="goods-item" bindtap="toDetail" data-id="{{item.id}}">
-      <image src="{{item.cover}}" mode="aspectFill" class="goods-cover"></image>
-      <view class="goods-info">
-        <view class="goods-name">{{item.name}}</view>
-        <view class="goods-meta">
-          <text class="price">￥{{item.price}}</text>
-          <text class="muted">库存 {{item.stock}}</text>
+  <view class="title">精选商品</view>
+    <view wx:if="{{loading}}" class="muted" style="text-align: center; padding: 20rpx;">正在加载极客好物...</view>
+    <view wx:elif="{{goodsList.length === 0}}" class="muted" style="text-align: center;">暂无商品</view>
+    
+    <view class="goods-grid">
+      <view wx:for="{{goodsList}}" wx:key="id" class="goods-card" bindtap="toDetail" data-id="{{item.id}}">
+        <image src="{{item.cover}}" mode="aspectFill" class="goods-cover"></image>
+        <view class="goods-info">
+          <view class="goods-name">{{item.name}}</view>
+          <view class="goods-meta">
+            <text class="price">￥{{item.price}}</text>
+            <text class="stock">余 {{item.stock}}</text>
+          </view>
         </view>
       </view>
     </view>
-  </view>
 </view>
