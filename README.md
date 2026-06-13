@@ -22,7 +22,7 @@
 
 ### 2. 配置 PHP 环境
 
-把 `backend/` 放到 `phpStudy` 或 `XAMPP` 的站点目录下，确保可以通过 `http://localhost/goodsSystem/backend/` 访问。
+把 `backend/` 放到 `phpStudy` 或 `XAMPP` 的站点目录下(phpstudy_pro\WWW\backemd)，确保可以通过 `http://localhost/goodsSystem/backend/` 访问。 localhost换成ipv4
 
 如果数据库账号密码不同，请修改 [backend/config/db.php](backend/config/db.php) 中的配置。
 
@@ -30,7 +30,7 @@
 
 使用微信开发者工具导入 `miniprogram/` 目录。
 
-将 [miniprogram/app.js](miniprogram/app.js) 和 [miniprogram/utils/config.js](miniprogram/utils/config.js) 中的 `apiBase` 修改为你的本地 PHP 地址。
+将 [miniprogram/app.js](miniprogram/app.js) 和 [miniprogram/utils/config.js](miniprogram/utils/config.js) 中的 `apiBase` 修改为你的本地 PHP 地址(也就是ipv4)。
 
 ### 4. 后台登录
 
