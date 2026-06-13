@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 date_default_timezone_set('Asia/Shanghai');
 
-const DB_HOST = '127.0.0.1';
+const DB_HOST = '127.0.0.1;port=3307';
 const DB_NAME = 'goods_system';
 const DB_USER = 'goods_system';
 const DB_PASS = '123456';
