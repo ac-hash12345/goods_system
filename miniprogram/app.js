@@ -1,6 +1,6 @@
 App({
   globalData: {
-    apiBase: 'http://localhost/goodsSystem/backend/api',
+    apiBase: 'http://127.0.0.1/goodsSystem/backend/api',
     userInfo: null
   },
 

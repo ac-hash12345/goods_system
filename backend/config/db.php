@@ -5,8 +5,8 @@ date_default_timezone_set('Asia/Shanghai');
 
 const DB_HOST = '127.0.0.1';
 const DB_NAME = 'goods_system';
-const DB_USER = 'root';
-const DB_PASS = 'root';
+const DB_USER = 'goods_system';
+const DB_PASS = '123456';
 const DB_CHARSET = 'utf8mb4';
 
 function db(): PDO

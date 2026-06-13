@@ -1,5 +1,5 @@
 const config = {
-  apiBase: 'http://localhost/goodsSystem/backend/api'
+  apiBase: 'http://127.0.0.1/goodsSystem/backend/api'
 };
 
 module.exports = config;
