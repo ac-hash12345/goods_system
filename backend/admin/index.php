@@ -126,11 +126,20 @@ $users = $pdo->query('SELECT * FROM user ORDER BY id DESC')->fetchAll();
               <td><?php echo htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8'); ?></td>
               <td><?php echo htmlspecialchars((string) $item['price'], ENT_QUOTES, 'UTF-8'); ?></td>
               <td><?php echo (int) $item['stock']; ?></td>
-              <td class="actions">
+              <!-- <td class="actions">
                 <form method="post" style="display:inline">
                   <input type="hidden" name="action" value="delete">
                   <input type="hidden" name="id" value="<?php echo (int) $item['id']; ?>">
                   <button type="submit">删除</button>
+                </form>
+              </td> -->
+              <td class="actions">
+                <button type="button" onclick='editGoods(<?php echo json_encode($item, JSON_HEX_APOS | JSON_UNESCAPED_UNICODE); ?>)'>修改</button>
+  
+                <form method="post" style="display:inline">
+                  <input type="hidden" name="action" value="delete">
+                  <input type="hidden" name="id" value="<?php echo (int) $item['id']; ?>">
+                  <button type="submit" style="background:#dc2626;">删除</button>
                 </form>
               </td>
             </tr>
@@ -188,5 +197,27 @@ $users = $pdo->query('SELECT * FROM user ORDER BY id DESC')->fetchAll();
     <?php endif; ?>
   </main>
 </div>
+<script>
+// 当点击“修改”按钮时触发
+function editGoods(item) {
+  // 1. 页面平滑滚动到最顶部的表单
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+  // 2. 更改表单标题，提示正在修改
+  document.querySelector('.card h3').innerText = '正在修改：' + item.name + ' (ID: ' + item.id + ')';
+  
+  // 3. 把商品数据回填到输入框里
+  document.querySelector('input[name="id"]').value = item.id; // 关键：把隐藏的 id 改为真实 id，触发 UPDATE
+  document.querySelector('input[name="name"]').value = item.name;
+  document.querySelector('input[name="price"]').value = item.price;
+  document.querySelector('input[name="cover"]').value = item.cover;
+  document.querySelector('input[name="stock"]').value = item.stock;
+  document.querySelector('input[name="category_id"]').value = item.category_id;
+  document.querySelector('textarea[name="detail"]').value = item.detail;
+  
+  // 把提交按钮的字也改一下
+  document.querySelector('button[type="submit"]').innerText = '确认修改';
+}
+</script>
 </body>
 </html>

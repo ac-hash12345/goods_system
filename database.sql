@@ -1,8 +1,27 @@
-CREATE DATABASE IF NOT EXISTS `goods_system` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `goods_system`;
+/*
+goods_system数据库见表与初始化脚本
 
+5张核心表：
+1. admin：管理员账号表，包含id、username、password字段。
+2. user：用户表，包含id、nickname、avatar、openid、create_time字段
+3. category：商品分类表，包含id、name字段。
+4. goods：商品表，包含id、name、price、cover、detail、stock、category_id、create_time字段。
+5. orders：订单表，包含id、order_no、user_id、goods_info、total_price、status、create_time字段。
+
+修改：
+http://127.0.0.1/goodsSystem/backend/admin/index.php
+或
+http://localhost/phpMyAdmin4.8.5/
+*/
+
+CREATE DATABASE IF NOT EXISTS `goods_system` 
+DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `goods_system`; // 切换到goods_system数据库
+
+// 删除旧表并创建新表
+// 在创建新表之前，先检查并删除同名的旧表
 DROP TABLE IF EXISTS `orders`;
-DROP TABLE IF EXISTS `goods`;
+DROP TABLE IF EXISTS `goods`; // 
 DROP TABLE IF EXISTS `user`;
 DROP TABLE IF EXISTS `admin`;
 DROP TABLE IF EXISTS `category`;
@@ -12,7 +31,7 @@ CREATE TABLE `admin` (
   `username` VARCHAR(50) NOT NULL,
   `password` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_username` (`username`)
+  UNIQUE KEY `uk_username` (`username`) // 确保管理员用户名唯一
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `user` (
@@ -58,13 +77,7 @@ CREATE TABLE `orders` (
   KEY `idx_status` (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- INSERT INTO `admin` (`username`, `password`) VALUES ('admin', '123456');
--- INSERT INTO `category` (`name`) VALUES ('数码'), ('服饰'), ('食品'), ('家居');
--- INSERT INTO `goods` (`name`, `price`, `cover`, `detail`, `stock`, `category_id`, `create_time`) VALUES
--- ('无线蓝牙耳机', 199.00, 'https://picsum.photos/seed/a1/600/600', '高品质音效，长续航。', 100, 1, NOW()),
--- ('夏季短袖T恤', 89.90, 'https://picsum.photos/seed/a2/600/600', '舒适透气，日常百搭。', 200, 2, NOW()),
--- ('混合坚果礼盒', 59.80, 'https://picsum.photos/seed/a3/600/600', '多种坚果组合，健康营养。', 150, 3, NOW());
-
+// 快速清空表里的所有数据，并且把自增 id 重新归位为 1
 TRUNCATE TABLE `category`;
 TRUNCATE TABLE `goods`;
 
