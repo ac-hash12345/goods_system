@@ -1,3 +1,5 @@
+// list.js - 订单列表页面逻辑
+
 const { request } = require('../../../utils/request');
 
 Page({

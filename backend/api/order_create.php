@@ -1,3 +1,5 @@
+// 创建订单接口，根据商品列表创建新的订单
+
 <?php
 declare(strict_types=1);
 

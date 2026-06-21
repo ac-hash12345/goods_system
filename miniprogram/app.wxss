@@ -29,9 +29,9 @@ page {
 }
 
 .btn-primary {
-  background: #ff6b00; /* 极客橙 */
+  background: #ff6b00;
   color: #ffffff;
-  border-radius: 16rpx; /* 改为微圆角，更有科技感 */
+  border-radius: 16rpx;
   margin-top: 16rpx;
   box-shadow: 0 8rpx 20rpx rgba(255, 107, 0, 0.3);
 }

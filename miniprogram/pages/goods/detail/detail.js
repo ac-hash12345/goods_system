@@ -1,3 +1,5 @@
+// detail.js - 商品详情页面逻辑
+
 const { request } = require('../../../utils/request');
 const { getCart, setCart } = require('../../../utils/storage');
 

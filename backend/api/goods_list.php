@@ -1,5 +1,7 @@
+// 获取商品列表接口，支持分页和搜索功能
+
 <?php
-declare(strict_types=1);
+// declare(strict_types=1);
 ini_set('display_errors', '1');
 error_reporting(E_ALL);
 
@@ -11,7 +13,7 @@ try {
     $keyword = trim((string) request_data('keyword', ''));
     $page = max(1, (int) request_data('page', 1));
     $pageSize = max(1, min(20, (int) request_data('pageSize', 10)));
-    $offset = ($page - 1) * $pageSize;
+    $offset = ($page - 1) * $pageSize; 
 
     $where = 'WHERE 1=1';
     $params = [];

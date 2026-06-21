@@ -1,3 +1,5 @@
+// cart.js - 购物车页面逻辑
+
 const { getCart, setCart } = require('../../utils/storage');
 const { request } = require('../../utils/request');
 

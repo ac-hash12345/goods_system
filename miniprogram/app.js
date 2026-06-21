@@ -1,3 +1,5 @@
+// app.js - 小程序全局配置和初始化逻辑
+
 App({
   globalData: {
     apiBase: 'http://127.0.0.1/goodsSystem/backend/api',

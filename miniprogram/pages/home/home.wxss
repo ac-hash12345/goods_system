@@ -36,7 +36,6 @@
   border-radius: 999rpx;
 }
 
-/* 现代双列网格布局 */
 .goods-grid {
   display: flex;
   flex-wrap: wrap;

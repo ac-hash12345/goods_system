@@ -1,3 +1,5 @@
+// mine.js - 个人中心页面逻辑
+
 const { getUserInfo } = require('../../utils/storage');
 
 Page({

@@ -1,3 +1,5 @@
+// home.js - 首页逻辑
+
 const { request } = require('../../utils/request');
 
 Page({

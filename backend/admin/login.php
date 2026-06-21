@@ -1,3 +1,5 @@
+// 后台管理员登录页面
+
 <?php
 session_start();
 require_once __DIR__ . '/../config/db.php';

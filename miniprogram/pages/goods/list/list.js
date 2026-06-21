@@ -1,3 +1,5 @@
+// list.js - 商品列表页面逻辑
+
 const { request } = require('../../../utils/request');
 
 Page({

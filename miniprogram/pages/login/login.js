@@ -1,3 +1,5 @@
+// login.js - 登录页面逻辑
+
 const { request } = require('../../utils/request');
 const { setUserInfo } = require('../../utils/storage');
 
