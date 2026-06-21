@@ -14,12 +14,13 @@ http://127.0.0.1/goodsSystem/backend/admin/index.php
 http://localhost/phpMyAdmin4.8.5/
 */
 
+
 CREATE DATABASE IF NOT EXISTS `goods_system` 
 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `goods_system`; // 切换到goods_system数据库
 
-// 删除旧表并创建新表
-// 在创建新表之前，先检查并删除同名的旧表
+-- 删除旧表并创建新表
+-- 在创建新表之前，先检查并删除同名的旧表
 DROP TABLE IF EXISTS `orders`;
 DROP TABLE IF EXISTS `goods`; // 
 DROP TABLE IF EXISTS `user`;
@@ -31,7 +32,7 @@ CREATE TABLE `admin` (
   `username` VARCHAR(50) NOT NULL,
   `password` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `uk_username` (`username`) // 确保管理员用户名唯一
+  UNIQUE KEY `uk_username` (`username`) -- 确保管理员用户名唯一
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `user` (
@@ -77,7 +78,7 @@ CREATE TABLE `orders` (
   KEY `idx_status` (`status`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-// 快速清空表里的所有数据，并且把自增 id 重新归位为 1
+-- 快速清空表里的所有数据，并且把自增 id 重新归位为 1
 TRUNCATE TABLE `category`;
 TRUNCATE TABLE `goods`;
 

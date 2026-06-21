@@ -1,5 +1,3 @@
-// 定义了几个函数，用于生成标准的JSON响应格式，方便前端处理API返回的数据。
-
 <?php
 declare(strict_types=1);
 

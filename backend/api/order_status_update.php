@@ -1,7 +1,5 @@
-// 更新订单状态接口，根据订单ID和新的状态值更新订单的状态
-
 <?php
-declare(strict_types=1);
+// declare(strict_types=1);
 
 require_once __DIR__ . '/../config/db.php';
 require_once __DIR__ . '/../lib/response.php';

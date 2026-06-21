@@ -1,5 +1,3 @@
-// 获取商品列表接口，支持分页和搜索功能
-
 <?php
 // declare(strict_types=1);
 ini_set('display_errors', '1');

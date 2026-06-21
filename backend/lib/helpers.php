@@ -1,5 +1,3 @@
-// 定义了一些辅助函数，包括request_data()用于获取请求数据，now_string()用于获取当前时间的字符串表示。
-
 <?php
 declare(strict_types=1);
 
