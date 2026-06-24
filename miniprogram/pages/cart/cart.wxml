@@ -1,11 +1,12 @@
 <view class="page">
   <view class="card">
     <view class="cart-header">
-      <checkbox checked="{{selectAll}}" bindchange="toggleAll">全选</checkbox>
+      <checkbox checked="{{selectAll}}" catchtap="toggleAll">全选</checkbox>
       <text class="muted">已选商品支持批量下单</text>
     </view>
+    
     <view wx:for="{{cartList}}" wx:key="id" class="cart-item">
-      <checkbox checked="{{item.checked !== false}}" data-index="{{index}}" bindchange="toggleItem"></checkbox>
+      <checkbox checked="{{item.checked}}" data-index="{{index}}" catchtap="toggleItem"></checkbox>
       <image src="{{item.cover}}" class="cart-cover"></image>
       <view class="cart-info">
         <view class="cart-name">{{item.name}}</view>

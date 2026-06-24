@@ -91,3 +91,12 @@ INSERT INTO `goods` (`name`, `price`, `cover`, `detail`, `stock`, `category_id`,
 ('现磨挂耳黑咖啡 (50包)', 49.90, 'https://picsum.photos/seed/geek4/600/600', '0糖0脂，深度烘焙，期末复习/打代码熬夜必备。', 500, 4, NOW()),
 ('人体工学鼠标 罗技MX Master 3', 599.00, 'https://picsum.photos/seed/geek5/600/600', '电磁滚轮，无缝跨屏，保护你的手腕。', 80, 1, NOW()),
 ('算法导论 (原书第3版)', 99.00, 'https://picsum.photos/seed/geek6/600/600', '计算机科学经典著作，MIT教材。', 150, 2, NOW());
+
+-- INSERT INTO `goods` (`name`, `price`, `cover`, `detail`, `stock`, `category_id`) VALUES
+-- ('无线蓝牙耳机', 129.00, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800', '轻量佩戴，高清通话，适合日常学习和通勤使用。', 80, 1),
+-- ('便携保温杯', 59.90, 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800', '316不锈钢内胆，长效保温，简约耐用。', 120, 3),
+-- ('每日坚果礼盒', 88.00, 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=800', '多种坚果组合，营养均衡，独立小包装。', 60, 2),
+-- ('护眼台灯', 169.00, 'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=800', '三档调光，柔和护眼，适合宿舍和书桌。', 45, 1),
+-- ('笔记本套装', 36.80, 'https://images.unsplash.com/photo-1517842645767-c639042777db?w=800', '课堂笔记、计划记录两用，纸张顺滑。', 200, 4),
+-- ('收纳整理盒', 42.00, 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800', '桌面和衣柜均可使用，让空间更整洁。', 90, 3),
+-- ('便携保温杯', 59.90, 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800', '316不锈钢内胆，保温保冷，适合日常携带。', 120, 3);

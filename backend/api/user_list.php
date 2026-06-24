@@ -1,5 +1,3 @@
-// 获取用户列表接口，返回用户的基本信息，包括ID、昵称、头像、openid和创建时间等。
-
 <?php
 declare(strict_types=1);
 

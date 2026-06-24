@@ -90,6 +90,7 @@ $users = $pdo->query('SELECT * FROM user ORDER BY id DESC')->fetchAll();
     <h2>后台管理</h2>
     <a href="?tab=goods">商品管理</a>
     <a href="?tab=orders">订单管理</a>
+    <a href="?tab=carts">🛒 购物车监控</a>
     <a href="?tab=users">用户管理</a>
     <a href="logout.php">退出登录</a>
   </aside>
@@ -126,26 +127,19 @@ $users = $pdo->query('SELECT * FROM user ORDER BY id DESC')->fetchAll();
               <td><?php echo htmlspecialchars($item['name'], ENT_QUOTES, 'UTF-8'); ?></td>
               <td><?php echo htmlspecialchars((string) $item['price'], ENT_QUOTES, 'UTF-8'); ?></td>
               <td><?php echo (int) $item['stock']; ?></td>
-              <!-- <td class="actions">
-                <form method="post" style="display:inline">
-                  <input type="hidden" name="action" value="delete">
-                  <input type="hidden" name="id" value="<?php echo (int) $item['id']; ?>">
-                  <button type="submit">删除</button>
-                </form>
-              </td> -->
               <td class="actions">
                 <button type="button" onclick='editGoods(<?php echo json_encode($item, JSON_HEX_APOS | JSON_UNESCAPED_UNICODE); ?>)'>修改</button>
-  
                 <form method="post" style="display:inline">
                   <input type="hidden" name="action" value="delete">
                   <input type="hidden" name="id" value="<?php echo (int) $item['id']; ?>">
-                  <button type="submit" style="background:#dc2626;">删除</button>
+                  <button type="submit" style="background:#dc2626;color:white;border:none;">删除</button>
                 </form>
               </td>
             </tr>
           <?php endforeach; ?>
         </table>
       </div>
+
     <?php elseif ($tab === 'orders'): ?>
       <div class="card">
         <h3>订单列表</h3>
@@ -173,6 +167,35 @@ $users = $pdo->query('SELECT * FROM user ORDER BY id DESC')->fetchAll();
           <?php endforeach; ?>
         </table>
       </div>
+
+    <?php elseif ($tab === 'carts'): ?>
+      <div class="card">
+        <h3>实时购物车监控面板 (弃购分析)</h3>
+        <table>
+          <tr><th>用户ID / 昵称</th><th>购物车内商品状态</th><th>最后活跃时间</th></tr>
+          <?php 
+            // 获取购物车数据并按时间倒序排列
+            $carts = $pdo->query('SELECT * FROM cart ORDER BY update_time DESC')->fetchAll();
+            foreach ($carts as $item): 
+                $goodsArr = json_decode($item['goods_info'], true);
+                $goodsDesc = [];
+                if (is_array($goodsArr)) {
+                    foreach($goodsArr as $g) {
+                        $checked = isset($g['checked']) && $g['checked'] === false ? '(未勾选)' : '';
+                        $goodsDesc[] = $g['name'] . ' x' . $g['quantity'] . ' ' . $checked;
+                    }
+                }
+                if (empty($goodsDesc)) $goodsDesc[] = '购物车已清空';
+          ?>
+            <tr>
+              <td><?php echo (int) $item['user_id'] . ' / ' . htmlspecialchars($item['nickname'], ENT_QUOTES, 'UTF-8'); ?></td>
+              <td style="color:#1677ff; font-weight:bold;"><?php echo htmlspecialchars(implode('； ', $goodsDesc), ENT_QUOTES, 'UTF-8'); ?></td>
+              <td><?php echo $item['update_time']; ?></td>
+            </tr>
+          <?php endforeach; ?>
+        </table>
+      </div>
+
     <?php else: ?>
       <div class="card">
         <h3>用户列表</h3>
@@ -195,6 +218,7 @@ $users = $pdo->query('SELECT * FROM user ORDER BY id DESC')->fetchAll();
         </table>
       </div>
     <?php endif; ?>
+
   </main>
 </div>
 <script>
@@ -207,7 +231,7 @@ function editGoods(item) {
   document.querySelector('.card h3').innerText = '正在修改：' + item.name + ' (ID: ' + item.id + ')';
   
   // 3. 把商品数据回填到输入框里
-  document.querySelector('input[name="id"]').value = item.id; // 关键：把隐藏的 id 改为真实 id，触发 UPDATE
+  document.querySelector('input[name="id"]').value = item.id; 
   document.querySelector('input[name="name"]').value = item.name;
   document.querySelector('input[name="price"]').value = item.price;
   document.querySelector('input[name="cover"]').value = item.cover;

@@ -1,7 +1,15 @@
 <view class="page login-page">
   <view class="card login-card">
-    <image class="avatar" src="{{avatarUrl || 'https://picsum.photos/seed/avatar/200/200'}}"></image>
-    <input class="name-input" placeholder="请输入昵称" value="{{nickname}}" bindinput="onNicknameInput" />
-    <button class="btn-primary" bindtap="chooseProfile">微信授权登录</button>
+    <image class="avatar" src="/images/avatar.png"></image>
+    <view style="font-size: 36rpx; font-weight: bold; margin-bottom: 40rpx; color: #1f2937;">账户登录</view>
+    
+    <input class="name-input" placeholder="请输入账户名" value="{{username}}" bindinput="onUsernameInput" />
+    <input class="name-input" placeholder="请输入密码" password="true" value="{{password}}" bindinput="onPasswordInput" />
+    
+    <button class="btn-primary" bindtap="loginSubmit">登 录 / 注 册</button>
+    <view style="color: #9ca3af; font-size: 24rpx; margin-top: 30rpx;">* 首次登录的账号将自动完成注册</view>
   </view>
+  <view class="logout-container" wx:if="{{userInfo}}">
+  <button class="btn-logout" bindtap="handleLogout">退出登录</button>
+</view>
 </view>

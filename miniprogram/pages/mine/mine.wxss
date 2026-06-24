@@ -20,3 +20,37 @@
   margin-top: 24rpx;
   color: #1677ff;
 }
+
+/* 钱包卡片样式 */
+.wallet-card {
+  margin: 30rpx 40rpx;
+  padding: 40rpx;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  border-radius: 24rpx;
+  color: #ffffff;
+  box-shadow: 0 16rpx 30rpx rgba(0, 0, 0, 0.15);
+}
+
+.wallet-title {
+  font-size: 26rpx;
+  color: #9ca3af;
+  margin-bottom: 16rpx;
+}
+
+.wallet-balance {
+  display: flex;
+  align-items: baseline;
+}
+
+.rmb {
+  font-size: 36rpx;
+  color: #fbbf24; /* 黄金色 */
+  margin-right: 8rpx;
+  font-weight: bold;
+}
+
+.amount {
+  font-size: 64rpx;
+  font-weight: bold;
+  color: #fbbf24; /* 黄金色 */
+}

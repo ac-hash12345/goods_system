@@ -4,10 +4,15 @@ const { request } = require('../../utils/request');
 
 Page({
   data: {
+    // banners: [
+    //   'https://picsum.photos/seed/goods-1/750/360',
+    //   'https://picsum.photos/seed/goods-2/750/360',
+    //   'https://picsum.photos/seed/goods-3/750/360'
+    // ],
     banners: [
-      'https://picsum.photos/seed/goods-1/750/360',
-      'https://picsum.photos/seed/goods-2/750/360',
-      'https://picsum.photos/seed/goods-3/750/360'
+      '/images/banner1.jpg', 
+      '/images/banner2.jpg',
+      '/images/banner3.jpg'
     ],
     categories: [
       { id: 1, name: '数码' },
